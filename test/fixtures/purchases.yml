@@ -1,9 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  buyer: MyString
-  offer: 
+  buyer: bob
+  offer: one
+  product: tom
+  quantity: 5.0
 
 two:
-  buyer: MyString
-  offer: 
+  buyer: bob
+  offer: one
+  product: pep
+  quantity: 3.0
+
+three:
+  buyer: go
+  offer: one
+  product: pot
+  quantity: 8.0

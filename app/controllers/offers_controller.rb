@@ -69,6 +69,34 @@ class OffersController < ApplicationController
     end
   end
 
+  # PUT /offers/1/products
+  # PUT /offers/1/products.xml
+  def add_product
+    @offer = Offer.find(params[:id])
+    if (params[:product])
+      @product = Product.find(params[:product])
+      @offer.products<< @product
+    end
+    respond_to do |format|
+      format.html { render :action => "edit" }
+      format.xml  { head :ok }
+    end
+  end
+
+  # GET /offers/1/purchases
+  def view_purchases
+    @offer = Offer.find(params[:id])
+    @products = @offer.products
+    @buyers = @offer.buyers
+    @purchases = @offer.purchase_matrix
+    @prices = @offer.prices
+    respond_to do |format|
+      format.html { render 'purchases' }
+      format.xml  { head :ok }
+    end
+
+  end
+
   # DELETE /offers/1
   # DELETE /offers/1.xml
   def destroy

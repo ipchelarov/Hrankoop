@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <b>Locaton:</b>
-  <%= @offer.locaton %>
+  <b>Location:</b>
+  <%= @offer.location %>
 </p>
 
 <p>
@@ -26,10 +26,10 @@
 </p>
 
 <p>
-  <b>Products:</b>
-  <%= @offer.products %>
+  <%= render "products/list" %>
 </p>
 
 
+<%= link_to 'Purchase', new_purchase_path + "?offer=#{@offer.id}" %> |
 <%= link_to 'Edit', edit_offer_path(@offer) %> |
 <%= link_to 'Back', offers_path %>

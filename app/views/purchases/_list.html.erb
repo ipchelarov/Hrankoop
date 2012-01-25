@@ -1,0 +1,26 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<table>
+  <tr>
+    <th>Buyer</th>
+    <% @products.each do |product| %>
+      <th><%= product.name %></th>
+    <% end %>
+    <th>Price</th>
+  </tr>
+
+  <% @buyers.each do |buyer| %>
+    <tr>
+      <td><%= buyer.name %></td>
+
+      <% @products.each do |p| %>
+        <td><%= @purchases[buyer.id][p.id] %></td>
+      <% end %>
+        
+      <td><%= @prices[buyer] %></td>
+    </tr>
+  <% end %>
+</table>

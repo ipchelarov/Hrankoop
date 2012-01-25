@@ -16,7 +16,9 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-	<%= image_tag(@person.picture.url) %> <br />
+    <% if @person.picture? %>
+	<%= image_tag(@person.picture.url, :size => "160x120") %> <br />
+    <% end %>
     <%= f.label :picture %><br />
     <%= f.file_field :picture %>
   </div>

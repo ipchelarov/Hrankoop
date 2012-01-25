@@ -7,8 +7,10 @@
 
 <p>
   <b>Picture:</b>
-  <%= image_tag(@person.picture.url) %> <br />
-  <%= @person.picture %>
+  <% if @person.picture? %>
+    <%= image_tag(@person.picture.url, :size => "160x120") %> <br />
+    <%= @person.picture %>
+  <% end %>
 </p>
 
 <p>

@@ -20,7 +20,9 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= image_tag(@farm.picture.url) %> <br />
+    <% if @farm.picture? %>
+      <%= image_tag(@farm.picture.url, :size => "160x120") %> <br />
+    <% end %>
     <%= f.label :picture %><br />
     <%= f.file_field :picture %>
   </div>

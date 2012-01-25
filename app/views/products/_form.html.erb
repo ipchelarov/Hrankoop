@@ -20,8 +20,11 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+    <% if @product.picture? %>
+	<%= image_tag(@product.picture.url, :size => "160x120") %> <br />
+    <% end %>
     <%= f.label :picture %><br />
-    <%= f.url_field :picture %>
+    <%= f.file_field :picture %>
   </div>
   <div class="field">
     <%= f.label :farm %><br />
@@ -31,7 +34,11 @@
     <%= f.label :season %><br />
     <%= f.text_field :season %>
   </div>
-  <div class="actions">
+    <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+<div class="actions">
     <%= f.submit %>
   </div>
   

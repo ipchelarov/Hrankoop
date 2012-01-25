@@ -1,8 +1,8 @@
 class CreatePeople < ActiveRecord::Migration
   def self.up
     create_table :people do |t|
-	  t.string :name
-	  t.string :picture
+      t.string :name
+      t.string :picture
       t.string :email
       t.string :phone
       t.string :address

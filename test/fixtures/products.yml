@@ -1,15 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
+tom:
+  name: Tomatoes
   description: MyString
   picture: 
-  farm: 
+  farm: one
   season: MyString
+  price: 2.6
 
-two:
-  name: MyString
+pep:
+  name: Peppers
   description: MyString
   picture: 
-  farm: 
+  farm: two
   season: MyString
+  price: 3.2
+
+pot:
+  name: Potatoes
+  description: MyString
+  picture:
+  farm: two
+  season: MyString
+  price: 1.4

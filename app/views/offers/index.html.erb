@@ -4,7 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Locaton</th>
+    <th>Location</th>
     <th>Date</th>
     <th>Responsible</th>
     <th>Products</th>
@@ -17,10 +17,10 @@
   <tr>
     <td><%= offer.title %></td>
     <td><%= offer.description %></td>
-    <td><%= offer.locaton %></td>
+    <td><%= offer.location %></td>
     <td><%= offer.date %></td>
     <td><%= offer.responsible %></td>
-    <td><%= offer.products %></td>
+    <td><% offer.products.each do |p| %> <%= p.name + " " %> <% end %> </td>
     <td><%= link_to 'Show', offer %></td>
     <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
     <td><%= link_to 'Destroy', offer, :confirm => 'Are you sure?', :method => :delete %></td>

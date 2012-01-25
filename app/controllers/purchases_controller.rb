@@ -25,6 +25,9 @@ class PurchasesController < ApplicationController
   # GET /purchases/new.xml
   def new
     @purchase = Purchase.new
+    if (params[:offer])
+      @offer = Offer.find(params[:offer])
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,11 +38,18 @@ class PurchasesController < ApplicationController
   # GET /purchases/1/edit
   def edit
     @purchase = Purchase.find(params[:id])
+    @offer = @purchase.offer
   end
 
   # POST /purchases
   # POST /purchases.xml
   def create
+    buyer = Person.find(params[:purchase][:person_id])
+    offer = Offer.find(params[:purchase][:offer_id])
+    product = Product.find(params[:purchase][:product_id])
+    params[:purchase][:buyer] = buyer
+    params[:purchase][:offer] = offer
+    params[:purchase][:product] = product
     @purchase = Purchase.new(params[:purchase])
 
     respond_to do |format|
@@ -57,6 +67,12 @@ class PurchasesController < ApplicationController
   # PUT /purchases/1.xml
   def update
     @purchase = Purchase.find(params[:id])
+    buyer = Person.find(params[:purchase][:person_id])
+    offer = Offer.find(params[:purchase][:offer_id])
+    product = Product.find(params[:purchase][:product_id])
+    params[:purchase][:buyer] = buyer
+    params[:purchase][:offer] = offer
+    params[:purchase][:product] = product
 
     respond_to do |format|
       if @purchase.update_attributes(params[:purchase])
@@ -66,6 +82,22 @@ class PurchasesController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @purchase.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  def order_product
+    @product = Product.find(params[:id])
+    @offers = @product.offers
+    unless (@offers.empty?)
+      @purchase = Purchase.new
+      @purchase.offer = @offers[0]
+      @purchase.product = @product
+      respond_to do |format|
+        format.html { render :new }
+        format.xml  { render :xml => @purchase }
+      end
+    else
+      redirect_to(products_path, :notice => "Currently the product #{@product.name} has no offering.")
     end
   end
 

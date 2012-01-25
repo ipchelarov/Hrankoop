@@ -9,6 +9,12 @@ Hrankoop::Application.routes.draw do
 
   resources :farms
 
+  match 'offers/:id/products' => 'offers#add_product', :as => :add_product
+  match 'offers/:id/purchases' => 'offers#view_purchases', :as => :view_purchases
+
+  match 'purchases/new/offer/:id' => 'purchases#new'
+  match 'purchases/new/product/:id' => 'purchases#order_product', :as => :order_product
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,7 +64,7 @@ Hrankoop::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "products#index"
 
   # See how all your routes lay out with "rake routes"
 

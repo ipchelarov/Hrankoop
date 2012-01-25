@@ -1,15 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
+  name: Opa
   description: MyString
   picture: 
-  owner: MyString
+  owner: bob
   location: MyString
 
 two:
-  name: MyString
+  name: Aha
   description: MyString
   picture: 
-  owner: MyString
+  owner: go
   location: MyString

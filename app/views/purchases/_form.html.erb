@@ -13,11 +13,28 @@
 
   <div class="field">
     <%= f.label :buyer %><br />
-    <%= f.text_field :buyer %>
+    <%= f.collection_select(:person_id, Person.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :offer %><br />
-    <%= f.text_field :offer %>
+    Offer: <br />
+    <% if @offer.nil? %>
+      <%=  f.collection_select(:offer_id, Offer.all, :id, :title) %>
+    <% else %>
+      <%= @offer.title + " at: " + @offer.date.to_s + " in: " + @offer.location %>
+      <%= hidden_field_tag 'purchase[offer_id]', @offer.id %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :product %><br />
+    <% if @offer.nil? %>
+      <%= f.collection_select(:product_id, Product.all, :id, :name) %>
+    <% else %>
+      <%= f.collection_select(:product_id, @offer.products, :id, :name) %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
   </div>
   <div class="actions">
     <%= f.submit %>

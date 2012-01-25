@@ -12,13 +12,15 @@
 
 <p>
   <b>Picture:</b>
-  <%= image_tag(@farm.picture.url) %> <br />
+  <% if @farm.picture? %>
+    <%= image_tag(@farm.picture.url, :size => "160x120") %> <br />
+  <% end %>
   <%= @farm.picture %>
 </p>
 
 <p>
   <b>Owner:</b>
-  <%= @farm.owner.name if !@farm.owner.nil? %>
+  <%= @farm.owner.name unless @farm.owner.nil? %>
 </p>
 
 <p>

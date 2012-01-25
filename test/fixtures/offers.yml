@@ -1,17 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
+  title: Offer One
   description: MyString
-  locaton: MyString
+  location: MyString
   date: 2011-08-31
-  responsible: MyString
-  products: 
+  responsible: Coordinator
+  products: [tom, pep]
 
 two:
-  title: MyString
+  title: Offer Two
   description: MyString
-  locaton: MyString
+  location: MyString
   date: 2011-08-31
-  responsible: MyString
-  products: 
+  responsible: Coordinator
+  products: [pep, pot]

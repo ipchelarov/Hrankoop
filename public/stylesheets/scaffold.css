@@ -12,6 +12,13 @@ pre {
   font-size: 11px;
 }
 
+tr {
+    text-align: left;
+}
+td {
+    text-align: left;
+}
+
 a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
@@ -33,6 +40,15 @@ div.field, div.actions {
 #error_explanation {
   width: 450px;
   border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#warning {
+  width: 450px;
+  border: 1px solid orange;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;

@@ -1,0 +1,11 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<b>Products:</b>
+<ul>
+  <% @offer.products.each do |p| %>
+  <li> <%= "#{p.name} = #{p.price}" %> </li>
+  <% end %>
+</ul>

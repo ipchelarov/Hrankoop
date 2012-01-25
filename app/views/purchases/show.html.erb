@@ -2,14 +2,28 @@
 
 <p>
   <b>Buyer:</b>
-  <%= @purchase.buyer %>
+  <%= @purchase.buyer.name %>
 </p>
 
 <p>
   <b>Offer:</b>
-  <%= @purchase.offer %>
+  <%= @purchase.offer.title %>
 </p>
 
+<p>
+  <b>Product:</b>
+  <%= @purchase.product.name %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @purchase.quantity %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @purchase.price %>
+</p>
 
 <%= link_to 'Edit', edit_purchase_path(@purchase) %> |
 <%= link_to 'Back', purchases_path %>

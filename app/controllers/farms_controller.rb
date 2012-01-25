@@ -40,10 +40,10 @@ class FarmsController < ApplicationController
   # POST /farms
   # POST /farms.xml
   def create
-	owner = Person.find(params[:farm][:owner])
-	params[:farm][:owner] = owner
+    owner = Person.find(params[:farm][:owner])
+    params[:farm][:owner] = owner
     @farm = Farm.new(params[:farm])
-	@farm.picture = params[:farm][:picture]
+    @farm.picture = params[:farm][:picture]
 
     respond_to do |format|
       if @farm.save
@@ -60,9 +60,9 @@ class FarmsController < ApplicationController
   # PUT /farms/1.xml
   def update
     @farm = Farm.find(params[:id])
-	owner = Person.find(params[:farm][:owner])
-	params[:farm][:owner] = owner
-	@farm.picture = params[:farm][:picture]
+    owner = Person.find(params[:farm][:owner])
+    params[:farm][:owner] = owner
+    @farm.picture = params[:farm][:picture]
     respond_to do |format|
       if @farm.update_attributes(params[:farm])
 

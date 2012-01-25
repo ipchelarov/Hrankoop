@@ -16,8 +16,8 @@
   <tr>
     <td><%= farm.name %></td>
     <td><%= farm.description %></td>
-    <td><%= farm.picture %></td>
-    <td><%= farm.owner %></td>
+    <td><%= image_tag(farm.picture.url, :size => "160x120") unless farm.picture.nil? %></td>
+    <td><%= farm.owner.name unless farm.owner.nil? %></td>
     <td><%= farm.location %></td>
     <td><%= link_to 'Show', farm %></td>
     <td><%= link_to 'Edit', edit_farm_path(farm) %></td>

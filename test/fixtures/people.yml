@@ -1,15 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: 
+bob:
+  name: Buyer
   picture: 
-  email: MyString
-  phone: MyString
-  address: MyString
+  email: buyer@hrankoop.org
+  phone: 123
+  address: A Street 123
 
-two:
-  name: 
+go:
+  name: Coordinator
   picture: 
-  email: MyString
-  phone: MyString
-  address: MyString
+  email: coord@hrankoop.org
+  phone: 321
+  address: B Street 321
